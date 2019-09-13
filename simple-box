@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Simple Customizable Box</title>
+<!--CSS style-->
+	<style>
+		#box {
+			height:300px;
+			width:300px;
+			background-color: #336699;
+			margin:30px 30px 30px 30px;
+			border:5px solid #dadada;
+		}
+	</style>
+</head>
+<body>
+<!--
+Customizing the box
+-->
+	<!--option makes a drop-down-->
+	<h1>Box Changer</h1>
+	<select id="height">
+		<option value="400px">400px</option>
+		<option value="700px">700px</option>
+		<option value="800px">800px</option>
+		<option value="900px">900px</option>
+	</select>
+	<select id="width">
+		<option value="400px">400px</option>
+		<option value="700px">700px</option>
+		<option value="800px">800px</option>
+		<option value="900px">900px</option>
+	</select>
+	<select id="color">
+		<option value="#336699">#336699</option>
+		<option value="#000000">#000000</option>
+		<option value="#333333">#333333</option>
+		<option value="#ffffff">#ffffff</option>
+	</select>
+
+	<div id="box">
+	</div>
+<!--Javascript here-->	
+	<script>
+
+	function changeHeight(){
+		theBox.style.height = heightElement.value;
+	}
+
+	function changeWidth(){
+		theBox.style.width = widthElement.value;  
+	}
+
+	function changeColor(){
+		theBox.style.background = colorElement.value;
+	}
+
+	var heightElement = document.getElementById('height'); 
+	var widthElement = document.getElementById('width'); 
+	var theBox = document.getElementById('box');
+	var colorElement = document.getElementById('color');
+	
+	heightElement.addEventListener('click', changeHeight);
+	widthElement.addEventListener('click', changeWidth); 
+	colorElement.addEventListener('click', changeColor); 
+
+	</script>
+</body>
+</html>
